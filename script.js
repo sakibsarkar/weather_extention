@@ -15,6 +15,7 @@ async function displayWeather(city) {
     const data = await fetchWeather(city);
     if (data.cod === 200) {
       weatherInfoDiv.innerHTML = `
+          <p><strong>Country:</strong> ${data.sys.country}</p>
           <p><strong>City:</strong> ${data.name}</p>
           <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
           <p><strong>Weather:</strong> ${data.weather[0].description}</p>
